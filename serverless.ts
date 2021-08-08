@@ -3,18 +3,8 @@ import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-// import hello from '@functions/hello';
 import {
-  // createPost,
-  // updatePost,
-  // listPosts,
-  // listCategories,
-  // createCategory,
-  // updateCategory,
-  // readSettings,
-  // updateSettings,
   createTeacher,
-  // createStudent
 } from '@functions/index'
 
 /**
@@ -60,7 +50,6 @@ const serverlessConfiguration: AWS = {
   functions: {
     createTeacher
   },
-  // functions: { hello, createPost, updatePost, listPosts, listCategories, createCategory, updateCategory, readSettings, updateSettings, createTeacher, createStudent },
   resources: {
     Resources: {
       CognitoUserPool: {

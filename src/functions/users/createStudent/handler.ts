@@ -22,4 +22,4 @@ const createStudent: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
 }
 
 export const main = middyfy(createStudent)
-  // .use(validationMiddleware({ allowedGroups: ['admin', 'teacher'] }))
+  .use(validationMiddleware({ allowedGroups: ['admin', 'teacher'] }))

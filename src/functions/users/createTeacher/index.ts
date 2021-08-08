@@ -12,6 +12,11 @@ export default {
           schemas: {
             'application/json': schema
           }
+        },
+        authorizer: {
+          name: 'authorizer',
+          arn: 'arn:aws:cognito-idp:sa-east-1:408927935259:userpool/sa-east-1_zrS5dvchA',
+          // claims: ['email', 'group']
         }
       }
     }
