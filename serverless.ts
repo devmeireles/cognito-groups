@@ -16,6 +16,7 @@ import {
  */
 
 const serverlessConfiguration: AWS = {
+  useDotenv: true,
   service: 'cognito-multi-level',
   frameworkVersion: '2',
   custom: {
