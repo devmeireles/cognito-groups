@@ -13,13 +13,9 @@ const createStudent: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   const { name, email } = event.body
   const student = await createUserAndAssignGroup(name, email, 'student')
 
-  console.log(student)
-
   return formatJSONResponse({
-    message: student,
-    event,
+    message: student
   });
 }
 
-export const main = middyfy(createStudent)
-  .use(validationMiddleware({ allowedGroups: ['admin', 'teacher'] }))
+export const main = middyfy(createStudent, validationMiddleware({ allowedGroups: ['admin', 'teacher'] }))

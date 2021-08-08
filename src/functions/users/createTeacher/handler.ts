@@ -13,8 +13,6 @@ const createTeacher: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   const { name, email } = event.body
   const teacher = await createUserAndAssignGroup(name, email, 'teacher')
 
-  console.log(teacher)
-
   return formatJSONResponse({
     message: teacher,
     event,

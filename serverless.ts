@@ -5,6 +5,7 @@ dotenv.config()
 
 import {
   createTeacher,
+  createStudent
 } from '@functions/index'
 
 /**
@@ -48,7 +49,8 @@ const serverlessConfiguration: AWS = {
   },
   // import the function via paths
   functions: {
-    createTeacher
+    createTeacher,
+    createStudent
   },
   resources: {
     Resources: {

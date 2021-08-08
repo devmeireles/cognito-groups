@@ -1,3 +1,4 @@
+import { formatJSONResponse } from '@libs/apiGateway'
 import { CognitoIdentityServiceProvider } from 'aws-sdk'
 
 const cognitoProvider = new CognitoIdentityServiceProvider({
@@ -29,7 +30,8 @@ export const createUserAndAssignGroup = async (name: string, email: string, grou
 
         return result
     } catch (error) {
-        console.log(error)
-        throw error.message
+        return formatJSONResponse({
+            message: error.message
+        }, 403)
     }
 }
