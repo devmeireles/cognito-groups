@@ -35,3 +35,22 @@ export const createUserAndAssignGroup = async (name: string, email: string, grou
         }, 403)
     }
 }
+
+export const listUserByGroup = async (group: string) => {
+    try {
+        const params: CognitoIdentityServiceProvider.ListUsersInGroupRequest = {
+            GroupName: group,
+            UserPoolId: process.env.USER_POOL_ID
+        }
+
+        const result = await cognitoProvider.listUsersInGroup(params).promise()
+
+        return result
+    } catch (error) {
+        console.log(error)
+
+        return formatJSONResponse({
+            message: error.message
+        }, 403)
+    }
+}

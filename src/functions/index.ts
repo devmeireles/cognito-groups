@@ -1,1 +1,1 @@
-export { createTeacher, createStudent } from './users'
+export { createTeacher, createStudent, listTeachers } from './users'
